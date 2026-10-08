@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AETHERIUS SYSTEMS | تطوير ويب وتطبيقات وهدايا ودعوات إلكترونية</title>
+<meta name="description" content="AETHERIUS SYSTEMS - تطوير مواقع وتطبيقات ويب، منيو إلكتروني، هدايا ودعوات مناسبات إلكترونية.">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem("aeth_theme");if(t==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}</script>
+<style>
+:root{
+  --bg:#070b1f; --bg2:#0f1740; --card:rgba(255,255,255,.06); --line:rgba(255,255,255,.12);
+  --txt:#eef1ff; --mut:#9aa4d6; --a:#5b6bff; --b:#9b4dff; --c:#38c8ff; --gold:#ffc83d; --ok:#25d366; --red:#ff5d6c;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',sans-serif;background:radial-gradient(1200px 600px at 80% -10%,#1d2a7a55,transparent),var(--bg);color:var(--txt);line-height:1.7}
+a{color:inherit;text-decoration:none}
+.container{width:min(1100px,92%);margin:auto}
+.grad{background:linear-gradient(90deg,var(--a),var(--b),var(--c));-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--txt);font:700 1rem 'Cairo';cursor:pointer;transition:.25s}
+.btn:hover{transform:translateY(-2px);border-color:var(--a)}
+.btn.primary{background:linear-gradient(90deg,var(--a),var(--b));border:none;box-shadow:0 8px 30px #5b6bff55}
+.btn.wa{background:var(--ok);border:none;color:#06260f}
+
+/* NAV */
+header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:#070b1fcc;border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font:800 1.1rem 'Orbitron';letter-spacing:1px;direction:ltr;display:flex;align-items:center;gap:10px}
+.logo small{display:block;font:600 .55rem 'Orbitron';letter-spacing:4px;color:var(--mut)}
+.nav-logo svg{width:40px;height:auto;display:block}
+nav ul{display:flex;gap:22px;list-style:none}
+nav a{color:var(--mut);font-weight:600;font-size:.95rem;transition:.2s}
+nav a:hover{color:#fff}
+.menu-btn{display:none;background:none;border:0;color:#fff;font-size:1.7rem;cursor:pointer}
+@media(max-width:760px){
+  .menu-btn{display:block}
+  nav ul{position:absolute;top:68px;inset-inline:0;flex-direction:column;background:#0b1130;padding:18px 24px;display:none;border-bottom:1px solid var(--line)}
+  nav ul.open{display:flex}
+}
+
+/* HERO */
+.hero{padding:50px 0;text-align:start}
+.hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:center}
+.hero .tag{display:inline-block;padding:6px 18px;border:1px solid var(--line);border-radius:999px;color:var(--c);font-size:.85rem;background:var(--card);margin-bottom:22px}
+.hero h1{font:900 clamp(2rem,5vw,3.5rem)/1.2 'Cairo'}
+.hero .brand{display:block;font:800 clamp(1.5rem,4vw,2.5rem) 'Orbitron';direction:ltr;margin-top:6px}
+.hero p{max-width:560px;margin:16px 0 28px;color:var(--mut);font-size:1.05rem}
+.hero .cta{display:flex;gap:14px;justify-content:flex-start;flex-wrap:wrap}
+
+.hero-logo{margin-bottom:10px;direction:ltr;display:flex;justify-content:flex-start}
+.big-logo svg{width:min(180px,50vw);height:auto;display:block;filter:drop-shadow(0 0 18px #5b6bffaa)}
+
+.shimmer{background:linear-gradient(100deg,#7d8bff 0%,#ffffff 25%,#38c8ff 50%,#9b4dff 75%,#7d8bff 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 4s linear infinite}
+@keyframes shine{to{background-position:-250% 0}}
+
+.hero-visual{display:flex;justify-content:center;position:relative}
+.dev-frame{position:relative;width:100%;max-width:320px;aspect-ratio:3/4;border-radius:24px;padding:3px;background:linear-gradient(135deg,var(--a),var(--b),var(--c));box-shadow:0 20px 50px #0009}
+.dev-frame-inner{width:100%;height:100%;background:#0b1130;border-radius:21px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.dev-frame-inner svg{width:80%;height:auto}
+
+@media(max-width:860px){
+  .hero-grid{grid-template-columns:1fr;gap:30px;text-align:center}
+  .hero .cta, .hero-logo{justify-content:center}
+  .hero p{margin-inline:auto}
+}
+
+/* SECTIONS */
+section{padding:60px 0}
+.sec-title{text-align:center;margin-bottom:40px}
+.sec-title h2{font:900 clamp(1.6rem,4vw,2.2rem) 'Cairo'}
+.sec-title p{color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;transition:.3s}
+.card:hover{transform:translateY(-6px);border-color:#5b6bff88}
+.ico{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-size:1.6rem;background:linear-gradient(135deg,#5b6bff33,#9b4dff33);border:1px solid var(--line);margin-bottom:14px}
+.card h3{margin-bottom:6px}
+.card p{color:var(--mut);font-size:.95rem}
+
+/* PROJECTS */
+.proj{display:flex;flex-direction:column;gap:14px;overflow:hidden;padding:0}
+.proj .frame{height:200px;border-bottom:1px solid var(--line);position:relative;background:#0b1130;overflow:hidden}
+.proj iframe{width:200%;height:200%;transform:scale(.5);transform-origin:0 0;border:0;pointer-events:none;background:#fff}
+.proj .body{padding:0 20px 20px}
+.proj .body .btn{margin-top:12px;padding:10px 20px;font-size:.9rem;width:100%}
+
+/* ORDER WIZARD */
+.wizard-wrap{display:flex;justify-content:center}
+.wizard{width:min(520px,100%);background:linear-gradient(160deg,#1b2766aa,#0f1740cc);border:1px solid var(--line);border-radius:28px;padding:22px;box-shadow:0 30px 80px #0008}
+.w-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.dots{display:flex;gap:8px}
+.dots i{width:12px;height:12px;border-radius:50%;background:#3a4272;transition:.3s}
+.dots i.on{background:var(--a);box-shadow:0 0 0 5px #5b6bff33}
+.dots i.done{background:var(--ok)}
+.clear{background:#ff5d6c22;border:1px solid #ff5d6c66;color:#ff9aa5;padding:6px 14px;border-radius:12px;font:700 .85rem 'Cairo';cursor:pointer}
+.w-title{font:800 1.2rem 'Cairo';margin-bottom:12px}
+.bar{height:8px;border-radius:99px;background:#2a3166;overflow:hidden;margin-bottom:18px}
+.bar div{height:100%;width:0;background:linear-gradient(90deg,var(--a),var(--b),var(--c));transition:.4s}
+.step{display:none}
+.step.show{display:block}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.opt{display:flex;align-items:center;gap:10px;padding:12px;border-radius:18px;background:#ffffff0d;border:1px solid var(--line);color:var(--txt);font:700 .9rem 'Cairo';cursor:pointer;transition:.2s}
+.opt.sel{border-color:var(--a);background:#5b6bff33}
+.opt .i{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;font-size:1.1rem;background:#ffffff12;flex:none}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:.85rem;color:var(--mut);margin-bottom:4px}
+.field input,.field textarea,.field select{width:100%;padding:10px 12px;border-radius:12px;background:#0a1030;border:1px solid var(--line);color:var(--txt);font:600 .9rem 'Cairo';outline:none}
+.w-nav{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+.w-nav .btn{width:100%;border-radius:18px}
+.err{color:var(--red);font-size:.85rem;min-height:1.2em;margin-top:6px}
+.done-box{text-align:center;padding:10px 0}
+.check{width:80px;height:80px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;font-size:2.5rem;color:var(--ok);background:#1f4a45;border:2px solid #25d36666}
+
+/* REVIEWS */
+.rate-box{display:grid;grid-template-columns:1fr 1.4fr;gap:24px;align-items:start}
+@media(max-width:800px){.rate-box{grid-template-columns:1fr}}
+.avg{text-align:center}
+.avg b{font:800 3rem 'Orbitron'}
+.stars{color:var(--gold);letter-spacing:2px;font-size:1.2rem;direction:ltr}
+.star-input{display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:4px;direction:ltr}
+.star-input input{display:none}
+.star-input label{font-size:1.8rem;color:#46507f;cursor:pointer}
+.star-input input:checked~label,.star-input label:hover,.star-input label:hover~label{color:var(--gold)}
+.review{padding:16px;border-radius:18px;background:#ffffff0a;border:1px solid var(--line);margin-bottom:12px}
+.review .h{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:4px}
+.review small{color:var(--mut)}
+
+/* CONTACT / FOOTER */
+.contact{text-align:center}
+.contact .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+footer{border-top:1px solid var(--line);padding:24px 0 80px;text-align:center;color:var(--mut);font-size:.85rem}
+
+/* USERS COUNTER */
+.users-badge{position:fixed;bottom:16px;right:16px;z-index:60;display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:#0b1130ee;border:1px solid var(--line);font-size:.8rem;backdrop-filter:blur(10px)}
+.users-badge .pulse{width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.users-badge b{font-family:'Orbitron';color:var(--c)}
+
+/* NAV TOOLS */
+.nav-tools{display:flex;align-items:center;gap:8px}
+.admin-btn, .theme-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:#fff;font-size:1rem;cursor:pointer;display:grid;place-items:center}
+.clock{display:flex;flex-direction:column;align-items:center;line-height:1.15;padding:3px 10px;border-radius:12px;background:var(--card);border:1px solid var(--line)}
+.clock-time{font:700 .8rem 'Orbitron';color:var(--c)}
+.clock-date{font:600 .6rem 'Cairo';color:var(--mut)}
+
+/* ADMIN MODAL */
+.ad-overlay{position:fixed;inset:0;z-index:200;background:#02040dcc;backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:14px}
+.ad-overlay[hidden],#adLogin[hidden],#adPanel[hidden]{display:none}
+.ad-box{position:relative;width:min(580px,100%);max-height:90vh;overflow:auto;background:#0b1130;border:1px solid var(--line);border-radius:24px;padding:24px}
+.ad-x{position:absolute;top:14px;left:14px;width:32px;height:32px;border-radius:50%;border:1px solid var(--line);background:#ffffff10;color:#fff;cursor:pointer}
+.ad-tabs{display:flex;gap:6px;margin:12px 0}
+.ad-tabs button{padding:6px 12px;border-radius:10px;border:1px solid var(--line);background:#ffffff0d;color:var(--mut);cursor:pointer}
+.ad-tabs button.on{background:var(--a);color:#fff}
+.ad-row{padding:12px;border-radius:14px;background:#ffffff0a;border:1px solid var(--line);margin-bottom:10px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="logo"><span class="nav-logo"></span>AETHERIUS<small>SYSTEMS</small></a>
+    <nav><ul id="menu">
+      <li><a href="#services">خدماتنا</a></li>
+      <li><a href="#projects">أعمالنا</a></li>
+      <li><a href="#order">اطلب الآن</a></li>
+      <li><a href="#reviews">التقييمات</a></li>
+      <li><a href="#contact">تواصل</a></li>
+    </ul></nav>
+    <div class="nav-tools">
+      <div class="clock" dir="ltr"><span class="clock-time" id="clockTime">--:--:--</span><span class="clock-date" id="clockDate"></span></div>
+      <button class="theme-btn" id="themeBtn" type="button" title="تغيير المظهر">🌙</button>
+      <button class="admin-btn" id="adminBtn" type="button" title="لوحة المالك">🔐</button>
+      <button class="menu-btn" id="menuBtn" type="button">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero"><div class="container hero-grid">
+  <div class="hero-text">
+    <div class="hero-logo"><span class="big-logo"></span></div>
+    <span class="tag">⚡ تطوير رقمي • مواقع • تطبيقات • هدايا ودعوات</span>
+    <h1>نحوّل فكرتك إلى <span class="grad">تجربة رقمية</span> مميزة
+      <span class="brand shimmer">AETHERIUS SYSTEMS</span></h1>
+    <p>مبرمج ويب ومطوّر تطبيقات. أصمم وأبرمج مواقع، تطبيقات ويب، منيو إلكتروني، هدايا ودعوات مناسبات إلكترونية بتصميم احترافي وسريع.</p>
+    <div class="cta">
+      <a href="#order" class="btn primary">🎁 اطلب خدمتك الآن</a>
+      <a href="#projects" class="btn">شاهد أعمالنا</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="dev-frame">
+      <div class="dev-frame-inner">
+        <span class="big-logo"></span>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="services"><div class="container">
+  <div class="sec-title">
+    <h2>خدماتنا الرقمية</h2>
+    <p>حلول تطوير مخصصة تلبي احتياجات عملك أو مناسبتك</p>
+  </div>
+  <div class="grid">
+    <div class="card"><div class="ico">💻</div><h3>تطوير مواقع الويب</h3><p>تصميم وتطوير مواقع تعريفية، متاجر إلكترونية، وصفحات هبوط حديثة وسريعة وسلسة الاستخدام.</p></div>
+    <div class="card"><div class="ico">📱</div><h3>تطبيقات الويب (PWA)</h3><p>تطبيقات تعمل على الموبايل والكمبيوتر بدون الحاجة للتحميل من المتجر، مع أداء ممتاز.</p></div>
+    <div class="card"><div class="ico">🍽️</div><h3>منيو إلكتروني (QR Menu)</h3><p>منيو تفاعلي للمطاعم والكافيهات يفتح بمسح كود QR مع إمكانية التعديل والطلب المباشر.</p></div>
+    <div class="card"><div class="ico">🎁</div><h3>هدايا ودعوات إلكترونية</h3><p>تصميم صفحات هدايا ودعوات زفاف ومناسبات تفاعلية مع موسيقى، عداد تنازلي، وخريطة الموقع.</p></div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="container">
+  <div class="sec-title">
+    <h2>معرض أعمالنا</h2>
+    <p>نماذج حية لمشاريع تم تصميمها وتطويرها باحترافية</p>
+  </div>
+  <div class="grid" id="projGrid"></div>
+</div></section>
+
+<section id="order"><div class="container">
+  <div class="sec-title">
+    <h2>اطلب خدمتك الآن</h2>
+    <p>خطوات بسيطة لتحديد متطلبات مشروعك وإرسال الطلب فوراً</p>
+  </div>
+  <div class="wizard-wrap"><div class="wizard">
+    <div class="w-top">
+      <div class="dots" id="dots"></div>
+      <button class="clear" id="resetBtn" type="button">إعادة التعيين ↺</button>
+    </div>
+    <div class="bar"><div id="bar"></div></div>
+    <form id="orderForm" onsubmit="return false">
+      <div class="step show" data-step="1">
+        <div class="w-title">ما هي الخدمة التي تحتاجها؟</div>
+        <div class="opts">
+          <div class="opt" data-val="موقع إلكتروني"><div class="i">💻</div>موقع إلكتروني</div>
+          <div class="opt" data-val="تطبيق ويب"><div class="i">📱</div>تطبيق ويب</div>
+          <div class="opt" data-val="منيو إلكتروني"><div class="i">🍽️</div>منيو إلكتروني</div>
+          <div class="opt" data-val="هدية / دعوة إلكترونية"><div class="i">🎁</div>هدية / دعوة</div>
+        </div>
+      </div>
+      <div class="step" data-step="2">
+        <div class="w-title">تفاصيل المشروع</div>
+        <div class="field"><label>اسم المشروع / النشاط التجاري</label><input type="text" id="pName" placeholder="مثال: متجر الأناقة"></div>
+        <div class="field"><label>وصف مختصر للمشروع</label><textarea id="pDesc" rows="3" placeholder="اكتب التفاصيل والمميزات..."></textarea></div>
+      </div>
+      <div class="step" data-step="3">
+        <div class="w-title">معلومات التواصل</div>
+        <div class="field"><label>الاسم الكريم</label><input type="text" id="uName" placeholder="اسمك الكامل"></div>
+        <div class="field"><label>رقم الواتساب</label><input type="tel" id="uPhone" placeholder="05xxxxxxxx"></div>
+        <div class="field"><label>الميزانية المتوقعة</label><select id="uBudget"><option value="غير محدد">اختر الميزانية</option><option value="اقتصادية">اقتصادية</option><option value="متوسطة">متوسطة</option><option value="احترافية">احترافية</option></select></div>
+      </div>
+      <div class="step" data-step="4">
+        <div class="done-box">
+          <div class="check">✓</div>
+          <div class="w-title">تم إعداد طلبك بنجاح!</div>
+          <p style="color:var(--mut);font-size:.9rem;margin-bottom:16px">اضغط لإرسال التفاصيل مباشرة عبر الواتساب لتأكيد الطلب.</p>
+          <a href="#" id="waSendBtn" class="btn wa" target="_blank" rel="noopener">📱 إرسال الطلب عبر الواتساب</a>
+        </div>
+      </div>
+      <div class="err" id="err"></div>
+      <div class="w-nav" id="wNav">
+        <button class="btn primary" id="nextBtn" type="button">التالي ←</button>
+        <button class="btn" id="prevBtn" type="button" style="display:none">السابق</button>
+      </div>
+    </form>
+  </div></div>
+</div></section>
+
+<section id="reviews"><div class="container">
+  <div class="sec-title">
+    <h2>تقييمات العملاء</h2>
+    <p>آراء بعض العملاء الذين تشرفنا بالعمل معهم</p>
+  </div>
+  <div class="rate-box">
+    <div class="card avg">
+      <b id="avgScore">5.0</b>
+      <div class="stars" id="avgStars">★★★★★</div>
+      <p style="margin-top:6px;font-size:.85rem"><span id="revCount">0</span> تقييمات</p>
+    </div>
+    <div>
+      <div id="revList"></div>
+      <form id="revForm" class="card" style="margin-top:16px" onsubmit="return false">
+        <h4 style="margin-bottom:10px">أضف تقييمك</h4>
+        <div class="field"><input type="text" id="rName" placeholder="اسمك" required></div>
+        <div class="field"><textarea id="rText" rows="2" placeholder="رأيك في الخدمة..." required></textarea></div>
+        <div class="field"><label>التقييم:</label>
+          <div class="star-input">
+            <input type="radio" name="star" id="s5" value="5" checked><label for="s5">★</label>
+            <input type="radio" name="star" id="s4" value="4"><label for="s4">★</label>
+            <input type="radio" name="star" id="s3" value="3"><label for="s3">★</label>
+            <input type="radio" name="star" id="s2" value="2"><label for="s2">★</label>
+            <input type="radio" name="star" id="s1" value="1"><label for="s1">★</label>
+          </div>
+        </div>
+        <button class="btn primary" id="subRevBtn" type="button" style="width:100%;margin-top:8px">نشر التقييم</button>
+      </form>
+    </div>
+  </div>
+</div></section>
+
+<section id="contact" class="contact"><div class="container">
+  <div class="sec-title">
+    <h2>تواصل معنا</h2>
+    <p>جاهزون لتحويل فكرتك إلى واقع، تواصل معنا في أي وقت</p>
+  </div>
+  <div class="row">
+    <a href="https://wa.me/201099684992" class="btn wa" target="_blank" rel="noopener">📱 WhatsApp</a>
+    <a href="mailto:contact@aetherius-systems.com" class="btn">✉️ البريد الإلكتروني</a>
+  </div>
+</div></section>
+
+<div class="users-badge">
+  <span class="pulse"></span>
+  <span>المتواجدون الآن: <b id="userCount">...</b></span>
+</div>
+
+</main>
+
+<div class="ad-overlay" id="adOverlay" hidden>
+  <div class="ad-box" id="adLogin">
+    <button class="ad-x" type="button" onclick="closeAdmin()">✕</button>
+    <h3>تسجيل دخول المالك 🔐</h3>
+    <div class="field"><label>كلمة المرور</label><input type="password" id="adPass" placeholder="أدخل كلمة المرور"></div>
+    <button class="btn primary" type="button" id="adLoginBtn" style="width:100%">دخول</button>
+    <div class="err" id="adErr"></div>
+  </div>
+
+  <div class="ad-box" id="adPanel" hidden>
+    <button class="ad-x" type="button" onclick="closeAdmin()">✕</button>
+    <h3>لوحة تحكم المالك 🛠️</h3>
+    <div class="ad-tabs">
+      <button type="button" class="on" data-tab="tab-proj">المشاريع</button>
+      <button type="button" data-tab="tab-rev">التقييمات</button>
+      <button type="button" data-tab="tab-sett">الإعدادات</button>
+    </div>
+
+    <div id="tab-proj" class="ad-tab-cnt">
+      <button class="btn primary" type="button" id="adAddProjBtn" style="margin-bottom:12px">+ إضافة مشروع</button>
+      <div id="adProjList"></div>
+    </div>
+
+    <div id="tab-rev" class="ad-tab-cnt" style="display:none">
+      <div id="adRevList"></div>
+    </div>
+
+    <div id="tab-sett" class="ad-tab-cnt" style="display:none">
+      <div class="ad-row">
+        <div class="field"><label>رقم الواتساب</label><input type="text" id="adWaNum"></div>
+        <div class="field"><label>كلمة المرور الجديدة</label><input type="password" id="adNewPass"></div>
+        <button class="btn primary" type="button" id="adSaveSettBtn">حفظ</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© <span id="year"></span> AETHERIUS SYSTEMS. جميع الحقوق محفوظة.</p>
+  </div>
+</footer>
+
+<script>
+const BRAND_LOGO_SVG = `<svg viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lgA" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#5b6bff"/><stop offset="50%" stop-color="#9b4dff"/><stop offset="100%" stop-color="#38c8ff"/></linearGradient>
+    <linearGradient id="lgB" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#38c8ff"/><stop offset="100%" stop-color="#5b6bff"/></linearGradient>
+  </defs>
+  <circle cx="120" cy="100" r="78" fill="none" stroke="url(#lgA)" stroke-width="2" stroke-dasharray="4 8"/>
+  <path d="M35,100 L75,100 L85,75 L98,125 L112,60 L128,140 L142,80 L153,115 L165,100 L205,100" fill="none" stroke="#38c8ff" stroke-width="2.5"/>
+  <path d="M120,32 L62,138 L88,138 L120,68 Z" fill="url(#lgA)"/>
+  <path d="M120,32 L178,138 L152,138 L120,68 Z" fill="url(#lgB)"/>
+  <circle cx="120" cy="32" r="5" fill="#38c8ff"/>
+</svg>`;
+
+document.querySelectorAll('.nav-logo, .big-logo').forEach(el => el.innerHTML = BRAND_LOGO_SVG);
+
+// Menu Toggle
+const menuBtn = document.getElementById('menuBtn');
+const menu = document.getElementById('menu');
+menuBtn.addEventListener('click', () => menu.classList.toggle('open'));
+
+// Projects & Reviews
+const DEFAULT_PROJECTS = [
+  { id: 'p1', title: 'AETHERIUS - دعوات إلكترونية', desc: 'منصة تفاعلية لتصميم دعوات المناسبات.', url: 'https://aetherius-sys.github.io/wedding-invitations-demo/' },
+  { id: 'p2', title: 'منيو إلكتروني تفاعلي QR', desc: 'منيو إلكتروني ذكي للمطاعم والمقاهي.', url: 'https://aetherius-sys.github.io/wedding-invitations-demo/' }
+];
+const DEFAULT_REVIEWS = [
+  { id: 'r1', name: 'أحمد الشمري', text: 'عمل ممتاز وسريع جداً، تم تصميم المنيو باحترافية.', stars: 5, date: '2025-01-10' }
+];
+
+let projects = JSON.parse(localStorage.getItem('aeth_projects')) || DEFAULT_PROJECTS;
+let reviews = JSON.parse(localStorage.getItem('aeth_reviews')) || DEFAULT_REVIEWS;
+let config = JSON.parse(localStorage.getItem('aeth_config')) || { waPhone: '201099684992', pass: 'admin123' };
+
+function renderProjects() {
+  const grid = document.getElementById('projGrid');
+  grid.innerHTML = projects.map(p => `
+    <article class="card proj">
+      <div class="frame"><iframe src="${p.url}"></iframe></div>
+      <div class="body">
+        <h3>${p.title}</h3>
+        <p>${p.desc}</p>
+        <a href="${p.url}" target="_blank" class="btn primary">🔗 معاينة حية</a>
+      </div>
+    </article>
+  `).join('');
+}
+
+function renderReviews() {
+  const list = document.getElementById('revList');
+  document.getElementById('revCount').textContent = reviews.length;
+  if(!reviews.length) { list.innerHTML = 'لا توجد تقييمات'; return; }
+  const avg = (reviews.reduce((a, b) => a + Number(b.stars), 0) / reviews.length).toFixed(1);
+  document.getElementById('avgScore').textContent = avg;
+  list.innerHTML = reviews.map(r => `
+    <div class="review">
+      <div class="h"><strong>${r.name}</strong><span>${'★'.repeat(r.stars)}</span></div>
+      <p>${r.text}</p>
+    </div>
+  `).join('');
+}
+
+document.getElementById('subRevBtn').addEventListener('click', () => {
+  const name = document.getElementById('rName').value.trim();
+  const text = document.getElementById('rText').value.trim();
+  if(!name || !text) return alert('يرجى كتابة الاسم والتقييم');
+  reviews.unshift({ id: 'r_' + Date.now(), name, text, stars: 5, date: new Date().toISOString().split('T')[0] });
+  localStorage.setItem('aeth_reviews', JSON.stringify(reviews));
+  renderReviews();
+});
+
+// Wizard Step Logic
+let currentStep = 1;
+let selectedService = '';
+const steps = document.querySelectorAll('.step');
+const bar = document.getElementById('bar');
+
+function updateWizard() {
+  steps.forEach(s => s.classList.toggle('show', Number(s.dataset.step) === currentStep));
+  bar.style.width = ((currentStep - 1) / 3) * 100 + '%';
+  document.getElementById('prevBtn').style.display = currentStep > 1 && currentStep < 4 ? 'block' : 'none';
+  if(currentStep === 4) document.getElementById('wNav').style.display = 'none';
+}
+
+document.querySelectorAll('.opt').forEach(opt => {
+  opt.addEventListener('click', () => {
+    document.querySelectorAll('.opt').forEach(o => o.classList.remove('sel'));
+    opt.classList.add('sel');
+    selectedService = opt.dataset.val;
+  });
+});
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+  if (currentStep === 1 && !selectedService) return alert('اختر الخدمة');
+  if (currentStep < 4) { currentStep++; updateWizard(); }
+  if (currentStep === 4) {
+    const msg = `طلب خدمة: ${selectedService}`;
+    document.getElementById('waSendBtn').href = `https://wa.me/${config.waPhone}?text=${encodeURIComponent(msg)}`;
+  }
+});
+document.getElementById('prevBtn').addEventListener('click', () => { if(currentStep > 1) { currentStep--; updateWizard(); } });
+
+// Clock
+setInterval(() => {
+  const d = new Date();
+  document.getElementById('clockTime').textContent = d.toLocaleTimeString('en-US', {hour12: false});
+}, 1000);
+
+document.getElementById('year').textContent = new Date().getFullYear();
+renderProjects();
+renderReviews();
+</script>
+</body>
+</html>
